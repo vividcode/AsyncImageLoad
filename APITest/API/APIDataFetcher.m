@@ -2,15 +2,15 @@
 //  APIDataFetcher.m
 //  APITest
 //
-//  Created by Admin on 9/5/15.
+//  Created by Nirav Bhatt on 9/5/15.
 //  Copyright (c) 2015 IphoneGameZone. All rights reserved.
-//
+/* Generic JSON fetch routines through NSURLConnection
+ Part of: https://github.com/vividcode/iOSAPIDataApp/tree/master/iOSAPIDataApp
+ */
 
 #import "APIDataFetcher.h"
 
 static NSOperationQueue * _connectionQueue = nil;
-static SuccessBlock _successBlock;
-static FailureBlock _failureBlock;
 
 @implementation APIDataFetcher
 
@@ -28,10 +28,7 @@ static FailureBlock _failureBlock;
 
 + (void) loadDataFromAPI : (NSString *) url : (SuccessBlock) successBlock :(FailureBlock) failureBlock
 {
-    _successBlock = successBlock;
-    _failureBlock = failureBlock;
-    
-    NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+     NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     [NSURLConnection sendAsynchronousRequest:request queue:[self connectionQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
      {
          if (response != nil)
@@ -47,33 +44,26 @@ static FailureBlock _failureBlock;
                      
                      if (jsonObject != nil)
                      {
-                         if ([jsonObject respondsToSelector:@selector(setObject:forKey:)])
-                         {
-                             [self presentData:jsonObject];
-                         }
-                         else
-                         {
-                             [self presentError:jsonError];
-                         }
+                         [self presentData:jsonObject :successBlock];
                      }
                      else
                      {
-                         [self presentError:jsonError];
+                         [self presentError:jsonError :failureBlock];
                      }
                  }
                  else
                  {
-                     [self presentError:nil];
+                     [self presentError:nil :failureBlock];
                  }
              }
              else
              {
-                 [self presentError:nil];
+                 [self presentError:nil :failureBlock];
              }
          }
         else
         {
-             [self presentError:connectionError];
+            [self presentError:connectionError :failureBlock];
         }
      }];
 }
@@ -83,19 +73,19 @@ static FailureBlock _failureBlock;
     return [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 99)];
 }
 
-+ (void) presentData:(id)jsonObject
++ (void) presentData:(id)jsonObject :(SuccessBlock) block
 {
     [[NSOperationQueue mainQueue] addOperationWithBlock:
      ^{
-         _successBlock(jsonObject);
+         block(jsonObject);
      }];
 }
 
-+ (void) presentError:(NSError *)error
++ (void) presentError:(NSError *)error :(FailureBlock) block
 {
     [[NSOperationQueue mainQueue] addOperationWithBlock:
      ^{
-        _failureBlock(error);
+        block(error);
     }];
 }
 @end
