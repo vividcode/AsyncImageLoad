@@ -20,16 +20,6 @@
 		84FA86D51BEF60A40048D35E /* APITableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FA86D31BEF60A40048D35E /* APITableViewCell.xib */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		845CBF1B1B9B52C9008451C2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 845CBEF91B9B52C8008451C2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 845CBF001B9B52C8008451C2;
-			remoteInfo = APITest;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		845CBF011B9B52C8008451C2 /* APITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845CBF051B9B52C9008451C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -39,7 +29,6 @@
 		845CBF0F1B9B52C9008451C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		845CBF111B9B52C9008451C2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		845CBF141B9B52C9008451C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		845CBF1A1B9B52C9008451C2 /* APITestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APITestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		845CBF361B9B7D78008451C2 /* Commans.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Commans.h; sourceTree = "<group>"; };
 		845CBF371B9B7D78008451C2 /* Commans.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Commans.m; sourceTree = "<group>"; };
 		84FA86BF1BEF60430048D35E /* APIDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIDataFetcher.h; sourceTree = "<group>"; };
@@ -61,13 +50,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		845CBF171B9B52C9008451C2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -83,7 +65,6 @@
 			isa = PBXGroup;
 			children = (
 				845CBF011B9B52C8008451C2 /* APITest.app */,
-				845CBF1A1B9B52C9008451C2 /* APITestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,24 +154,6 @@
 			productReference = 845CBF011B9B52C8008451C2 /* APITest.app */;
 			productType = "com.apple.product-type.application";
 		};
-		845CBF191B9B52C9008451C2 /* APITestTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 845CBF271B9B52C9008451C2 /* Build configuration list for PBXNativeTarget "APITestTests" */;
-			buildPhases = (
-				845CBF161B9B52C9008451C2 /* Sources */,
-				845CBF171B9B52C9008451C2 /* Frameworks */,
-				845CBF181B9B52C9008451C2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				845CBF1C1B9B52C9008451C2 /* PBXTargetDependency */,
-			);
-			name = APITestTests;
-			productName = APITestTests;
-			productReference = 845CBF1A1B9B52C9008451C2 /* APITestTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -202,10 +165,6 @@
 				TargetAttributes = {
 					845CBF001B9B52C8008451C2 = {
 						CreatedOnToolsVersion = 6.1;
-					};
-					845CBF191B9B52C9008451C2 = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = 845CBF001B9B52C8008451C2;
 					};
 				};
 			};
@@ -223,7 +182,6 @@
 			projectRoot = "";
 			targets = (
 				845CBF001B9B52C8008451C2 /* APITest */,
-				845CBF191B9B52C9008451C2 /* APITestTests */,
 			);
 		};
 /* End PBXProject section */
@@ -237,13 +195,6 @@
 				845CBF321B9B6847008451C2 /* Main.storyboard in Resources */,
 				84FA86D51BEF60A40048D35E /* APITableViewCell.xib in Resources */,
 				845CBF121B9B52C9008451C2 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		845CBF181B9B52C9008451C2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,22 +215,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		845CBF161B9B52C9008451C2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		845CBF1C1B9B52C9008451C2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 845CBF001B9B52C8008451C2 /* APITest */;
-			targetProxy = 845CBF1B1B9B52C9008451C2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		845CBF0E1B9B52C9008451C2 /* Main.storyboard */ = {
@@ -399,40 +335,6 @@
 			};
 			name = Release;
 		};
-		845CBF281B9B52C9008451C2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = APITestTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/APITest.app/APITest";
-			};
-			name = Debug;
-		};
-		845CBF291B9B52C9008451C2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = APITestTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/APITest.app/APITest";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -450,15 +352,6 @@
 			buildConfigurations = (
 				845CBF251B9B52C9008451C2 /* Debug */,
 				845CBF261B9B52C9008451C2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		845CBF271B9B52C9008451C2 /* Build configuration list for PBXNativeTarget "APITestTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				845CBF281B9B52C9008451C2 /* Debug */,
-				845CBF291B9B52C9008451C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -70,7 +70,7 @@
     }
     
     [self startActivityIndicator];
-    [APIDataFetcher loadDataFromAPI:API_URL :^(id result)
+    [APIDataFetcher loadDataFromAPIUsingSession:API_URL :^(id result)
     {
         [self stopActivityIndicator];
         if ([result isKindOfClass:[NSDictionary class]])

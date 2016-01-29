@@ -15,6 +15,6 @@ typedef void (^FailureBlock)(NSError * error);
 
 + (void) loadDataFromAPI : (NSString *) url : (SuccessBlock) successBlock :(FailureBlock) failureBlock;
 
-
++ (void) loadDataFromAPIUsingSession : (NSString *) url : (SuccessBlock) successBlock :(FailureBlock) failureBlock;
 
 @end
